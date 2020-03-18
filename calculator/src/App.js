@@ -1,37 +1,42 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
+import Jumbotron from './components/Jumbotron'
+import Result from './components/Result'
+import Calculator from './components/Calculator'
 
-class App extends Component {
-
+class App extends Component{
   state = {
     firstNum: 0,
     secondNum: 0,
-    result: 0
-  }
-
-  handleAddition = () => {
-    this.setState({ result: this.state.firstNum + this.state.secondNum })
-  }
-
-  handleSubtraction = () => {
-    this.setState({ result: this.state.firstNum - this.state.secondNum })
-  }
-
-  handleMultiplication = () => {
-    this.setState({ result: this.state.firstNum * this.state.secondNum })
-  }
-
-  handleDivision = () => {
-    this.setState({ result: this.state.firstNum / this.state.secondNum })
+    result: 0,
+    operator: null,
+    isFirstNumber: true,
   }
 
   render() {
     return (
-      <div>
-        <button onClick={this.handleAddition}>+</button>
-        <button onClick={this.handleSubtraction}>-</button>
-        <button onClick={this.handleMultiplication}>*</button>
-        <button onClick={this.handleDivision}>/</button>
-      </div>  
+      <>
+      <Jumbotron />
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-4">
+            {/* Calulator Card Here */}
+            <Calculator 
+            firstNum = {this.state.firstNum}
+            secondNum = {this.state.secondNum}
+            operator = {this.state.operator}
+            isFirstNumber = {this.state.isFirstNumber}
+            result = {this.state.result}
+            />
+          </div>
+          <div className="col-lg-6">
+            {/* Result Card */}
+            <Result 
+            result = {this.state.result}
+            />
+          </div>
+        </div>
+      </div>
+      </>
     )
   }
 }
