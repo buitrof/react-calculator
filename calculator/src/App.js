@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import NumberButton from './components/NumberButton'
 
 class App extends Component {
 
@@ -7,6 +8,7 @@ class App extends Component {
     secondNum: 0,
     result: 0
   }
+
 
   handleAddition = () => {
     this.setState({ result: this.state.firstNum + this.state.secondNum })
