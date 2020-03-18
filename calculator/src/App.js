@@ -21,8 +21,8 @@ class App extends Component{
           <div className="col-lg-4">
             {/* Calulator Card Here */}
             <Calculator 
-            first_number = {this.state.firstNum}
-            second_number = {this.state.secondNum}
+            firstNum = {this.state.firstNum}
+            secondNum = {this.state.secondNum}
             operator = {this.state.operator}
             isFirstNumber = {this.state.isFirstNumber}
             result = {this.state.result}

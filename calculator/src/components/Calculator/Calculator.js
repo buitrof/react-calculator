@@ -16,14 +16,30 @@ class Calculator extends Component {
   handleDivision = () => {
     this.setState({ result: this.state.firstNum / this.state.secondNum })
   }
+
+  handleNumOne = number => {
+    this.setState({ firstNum: number})
+  }
+  handleNumTwo = number => {
+    this.setState({secondNum: number})
+  }
+
+  handleOperator = op => {
+    this.setState({ isFirstNumber: false, operator: op})
+  }
   render() {
-    console.log(this.props.first_number)
     return (
       <div className="card">
         <h3 className="card-header">Calculator</h3>
     
         <div className="card-body">
-          <button id="button-1" className="btn btn-primary number" value="1">1</button>
+          <button onClick = {function () { 
+            if(this.props.isFirstNumber){
+              handleNumOne(1)
+            }else{
+              handleNumTwo(1)
+            }
+            }}id="button-1" className="btn btn-primary number" value="1">1</button>
           <button id="button-2" className="btn btn-primary number" value="2">2</button>
           <button id="button-3" className="btn btn-primary number" value="3">3</button>
           <button id="button-plus" className="btn btn-danger operator" value="plus">+</button>
