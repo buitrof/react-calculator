@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import Jumbotron from './components/Jumbotron'
 import Result from './components/Result'
+import Calculator from './components/Calculator'
 
 class App extends Component{
   render() {
@@ -11,6 +12,7 @@ class App extends Component{
         <div className="row">
           <div className="col-lg-4">
             {/* Calulator Card Here */}
+            <Calculator />
           </div>
           <div className="col-lg-6">
             {/* Result Card */}
